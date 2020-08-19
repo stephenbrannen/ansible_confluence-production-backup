@@ -1,0 +1,7 @@
+---
+# role: backup
+# Fetch.yml
+- name: Download backup file to local machine
+  fetch:
+    src: "{{ backup_path }}/{{ backup_filename }}"
+    dest: "{{ local_dest }}"

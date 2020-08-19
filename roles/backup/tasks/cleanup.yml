@@ -1,0 +1,7 @@
+---
+# role: backup
+# cleanup.yml
+- name: Remove temp backup directory
+  file:
+    path: "{{ temp_backup_path }}"
+    state: absent

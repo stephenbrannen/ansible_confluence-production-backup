@@ -1,0 +1,15 @@
+---
+# role: backup
+# main.yml
+- name: Backup | Create temp backup directory
+  include: temp-dir.yml
+- name: Backup | Create Confluence home directory backup
+  include: home-backup.yml
+- name: Backup | Create Confluence database backup
+  include: database-backup.yml
+- name: Backup | Create Confluence backup archive file
+  include: archive.yml
+- name: Backup | Cleanup
+  include: cleanup.yml
+- name: Backup | Download backup file to local machine
+  include: fetch.yml

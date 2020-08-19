@@ -1,0 +1,20 @@
+---
+# site.yml
+- name: Create a backup of a Confluence instance using the production backup strategy
+  hosts: confluence_server
+  vars:
+    # OS user for Confluence service
+    os_confluence_user: confluence
+    os_confluence_group: confluence
+    # Database user, password, name
+    confluence_db_user: confluence
+    confluence_db_user_password: password-goes-here
+    confluence_db_name: confluence
+    # Path used to store backup files, can be changed
+    backup_path: /var/atlassian/production-backups/confluence
+    # Path to Confluence home directory, can be changed
+    home_dir: "/var/atlassian/application-data/confluence"
+    # Local backup file destination, can be changed
+    local_dest: /path/to/local/dest
+  roles:
+    - backup

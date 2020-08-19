@@ -1,0 +1,9 @@
+---
+# role: backup
+# archive.yml
+- name: Create backup archive from temp directory
+  archive:
+    path: "{{ temp_backup_path }}"
+    dest: "{{ backup_path }}/{{ backup_filename }}"
+    owner: "{{ os_confluence_user }}"
+    group: "{{ os_confluence_group }}"

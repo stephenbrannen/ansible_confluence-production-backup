@@ -1,0 +1,11 @@
+---
+# role: backup
+# database-backup.yml
+- name: Dump Confluence database to file
+  postgresql_db:
+    name: "{{ confluence_db_name }}"
+    login_user: "{{ confluence_db_user }}"
+    state: dump
+    target: "{{ temp_backup_path }}/confluence.sql"
+  become: true
+  become_user: "{{ os_confluence_user }}"

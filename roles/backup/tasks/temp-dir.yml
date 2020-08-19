@@ -1,0 +1,9 @@
+---
+# role: backup
+# temp-dir.yml
+- name: Create temp directory 
+  file:
+    path: "{{ temp_backup_path }}"
+    state: directory
+    owner: "{{ os_confluence_user }}"
+    group: "{{ os_confluence_group }}"

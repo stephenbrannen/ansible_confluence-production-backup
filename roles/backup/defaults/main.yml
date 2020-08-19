@@ -1,0 +1,4 @@
+# role: backup
+# defaults main.yml
+temp_backup_path: "{{ backup_path }}/{{ ansible_date_time.date }}"
+backup_filename: "confluence-backup-{{ ansible_date_time.date }}.tar.gz"

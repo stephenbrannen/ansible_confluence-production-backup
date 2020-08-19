@@ -1,0 +1,7 @@
+---
+# role: backup
+# home-backup.yml
+- name: Create .tar.gz backup of Confluence home directory
+  archive:
+    path: "{{ home_dir }}"
+    dest: "{{ temp_backup_path }}/confluence_home.tar.gz"
